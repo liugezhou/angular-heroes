@@ -16,3 +16,13 @@
 > 2. Observable 可观察的数据    
 > + HeroService.getHeros()将会返回Observable，部分原因在于他最终会使用Angular的HttpClient.get方法来获取英雄数据，而HttpClient.get()会返回Observable.    
 > + Observable是RxJS库中的一个关键类。
+
+#### 20210428
+> 1. 添加AppRoutingModule(原cli新建已生成): ng generate module app-routing --flat --module=app  
+> + --flat:把这个文件放进了src/app中，而不是单独的目录中。  
+> + --module=app告诉cli把它注册到AppModule的imports数组中。 
+> 2. 生成的app-routing-module.ts文件内容如目录所示。    
+> + 这是一个Module，因此使用@angular/core中的ngModule。@ngModule 元数据会初始化路由器，并开始监听浏览器地址的变化。
+> + 使用了@angular/router中的 RouterModule和Routes，使得该应用具有路由功能。    
+> + <router-outlet></router-outlet> 
+> + 标签跳转 <a routerLink="/heroes">Go</a>
