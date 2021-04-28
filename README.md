@@ -32,3 +32,10 @@
 >  要让HttpClient在应用中随处可用，需要两个步骤：导入语句添加到AppModule中，imports注入。   
 ##### 模拟数据服务器
 > npm install angular-in-memory-web-api --save
+
+
+## 组件与模版
+---
+> app/viewdata  
+> [可以用构造函数来代替这些属性的声明和初始化语句。]    
+> 这个示例：{{}}显示一个组件的属性 ｜ *ngFor显示数组 ｜ 用一个TypeScript类为你的组件描述模型数据并显示模型的属性 ｜ 用ngIf根据一个布尔表达式又条件的显示一段HTML。
