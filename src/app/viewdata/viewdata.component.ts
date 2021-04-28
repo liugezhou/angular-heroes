@@ -17,7 +17,28 @@ export class ViewdataComponent implements OnInit {
   myHero:Liugezhou = this.heroes[0];
   constructor(){
   }
+  ngOnChanges(){
+    console.log('ngOnChanges()')
+  }
   ngOnInit(){
-
+    console.log('ngOnInit()')
+  }
+  ngOnDoCheck(){
+    console.log('ngOnDoCheck()')
+  }
+  ngAfterContentInit(){
+    console.log('ngAfterContentInit()')
+  }
+  ngAfterContentChecked(){
+      console.log('ngAfterContentChecked()')
+  }
+  ngAfterViewInit(){
+    console.log('ngAfterViewInit()')
+  }
+  ngAfterViewChecked(){
+    console.log('ngAfterViewChecked()')
+  }
+  ngOnDestroy(){
+    console.log('ngOnDestroy()')
   }
 }

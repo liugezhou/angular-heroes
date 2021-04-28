@@ -38,4 +38,39 @@
 ---
 > app/viewdata  
 > [可以用构造函数来代替这些属性的声明和初始化语句。]    
-> 这个示例：{{}}显示一个组件的属性 ｜ *ngFor显示数组 ｜ 用一个TypeScript类为你的组件描述模型数据并显示模型的属性 ｜ 用ngIf根据一个布尔表达式又条件的显示一段HTML。
+> 这个示例：    
+> + {{}}显示一个组件的属性 
+> *ngFor显示数组 ｜
+> 用一个TypeScript类为你的组件描述模型数据并显示模型的属性 ｜
+> 用ngIf根据一个布尔表达式又条件的显示一段HTML。
+
+## 模版语法
+---
+> 在Angular中，模版就是一块HTML
+
+## 用户输入
+> + 使用Angular事件绑定机制来响应任何DOM事件。
+> + (click) | (keyup) | (keyup.enter) | (blur) 
+
+## 生命周期钩子
+> + ngOnChanges()   -- 使用变更检测钩子
+> + ngOnInit()   --  
+> + ngDoCheck()   
+> + ngAfterContentInit()  
+> + ngAfterContentChecked()   
+> + ngAfterViewInit() 
+> + ngAfterViewChecked()  
+> + ngOnDestroy()
+### 使用变更检测钩子
+> Angular生命周期钩子: ngOnChanges(changes:SimpleChange): 
+> 在 ngOnInit() 之前以及所绑定的一个或多个输入属性的值发生变化时都会调用。 
+> 注意，如果你的组件没有输入，或者你使用它时没有提供任何输入，那么框架就不会调用 ngOnChanges()。 
+> changes参数包含当前传入值、上次传入值以及是否为第一次传入。 
+## 生命周期范例
+> + Peek-a-boo  
+> + Spy   
+> + Onchanges
+> + DoCheck
+> + AfterView
+> + AfterContent    
+> + 计数器
