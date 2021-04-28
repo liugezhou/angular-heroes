@@ -26,3 +26,9 @@
 > + 使用了@angular/router中的 RouterModule和Routes，使得该应用具有路由功能。    
 > + <router-outlet></router-outlet> 
 > + 标签跳转 <a routerLink="/heroes">Go</a>
+
+##### 从服务端获取数据
+> 借助Angular的HttpClient来添加一些数据持久化特性。HttpClient是Angular通过HTTP与远程服务器通讯的机制。   
+>  要让HttpClient在应用中随处可用，需要两个步骤：导入语句添加到AppModule中，imports注入。   
+##### 模拟数据服务器
+> npm install angular-in-memory-web-api --save
