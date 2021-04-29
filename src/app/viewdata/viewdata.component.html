@@ -6,3 +6,12 @@
     </li>
     <p *ngIf="heroes.length > 3">There are many heroes!</p>
 </ul>
+
+<h3>父组件内容</h3>
+  <button (click)="timer.start()">Start</button>
+  <button (click)="timer.stop()">Stop</button>
+  <div class="seconds">{{timer.seconds}}</div>
+<app-son-component [title]="title" [hero]="myHero" (parentMethod)="accept($event)" #timer></app-son-component>
+<div *ngIf="sonString">
+    子组件传过来的值是：{{sonString}}
+</div>

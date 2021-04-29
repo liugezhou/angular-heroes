@@ -7,8 +7,9 @@ import { Liugezhou } from "./liugezhou";
 })
 export class ViewdataComponent implements OnInit {
   title:string ='Angular';
+  sonString:string;
   heroes:Liugezhou [] = [
-    new Liugezhou(1,'Liugezhou'),
+    new Liugezhou(1,'Liugezhou Love Angular'),
     new Liugezhou(2,'Liumingzhou'),
     new Liugezhou(3,'Liu'),
     new Liugezhou(4,'Ming'),
@@ -40,5 +41,8 @@ export class ViewdataComponent implements OnInit {
   }
   ngOnDestroy(){
     console.log('ngOnDestroy()')
+  }
+  accept(ev){
+   this.sonString = ev
   }
 }

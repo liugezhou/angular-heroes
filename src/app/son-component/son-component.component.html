@@ -1,0 +1,9 @@
+<div style="border:1px solid red">
+<h3>子组件内容：</h3>
+
+<h4>通过输入型绑定把数据从父组件传到子组件:{{title}}</h4>
+<h4>通过setter截听输入属性值的变化:{{hero.name}}</h4>
+<h4>通过ngOnChanges:{{str}},{{str1}}</h4>
+<button (click)="emitEvent(title)">子组件里面的点击事件</button>
+<p>{{message}}</p>
+</div>

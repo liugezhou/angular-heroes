@@ -83,3 +83,36 @@
 > + AfterView
 > + AfterContent    
 > + 计数器
+
+## 组件交互
+> 这里学习组件通讯场景：即让两个或多个组件之间共享信息的方法。  
+> son-component
+### 通过输入型绑定把数据从父组件传到子组件
+> 通常带有@Input装饰器
+### 通过setter截听输入属性值的变化
+```
+ export class NameChildComponent{
+     @Input()
+     get name() :string{return this._name}
+     set name(name:string){
+         this._name = (name && name.trim() || '<no name set>');
+     }
+     private _name='';
+ }
+```
+### 通过ngOnChanges()来截听输入属性值的变化
+> 在生命周期钩子中已经学习过
+
+### 父组件监听子组件的事件 
+> 子组件暴露一个EventEmitter属性，当事件发生时，子组件利用该属性emits(向上弹射)事件。   
+> 子组件的EventEmitter属性是一个输出属性，通常带有@Output装饰器
+
+### 父组件与子组件通过本地变量互动
+> 父组件不能使用数据绑定来读取子组件的属性或调用子组件的方法。但可以在父组件模版里，新建一个本地变量来代表子组件，然后利用这个变量来读取子组件的属性和调用子组件的方法。    
+> eg：父组件中有timer.start()和timer.stop()方法，然后在父组件中：<app-child-component #timer></app-child-component>,这个时候就可以调用子组件的start()和stop()方法了。
+
+### 父组件调用@ViewChild()
+
+### 父组件和子组件通过服务来通讯
+> 父子组件共享一个服务，利用该服务在组件家族内部实现双向通讯。  
+> 
