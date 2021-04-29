@@ -54,18 +54,27 @@
 
 ## 生命周期钩子
 > + ngOnChanges()   -- 使用变更检测钩子
-> + ngOnInit()   --  
-> + ngDoCheck()   
-> + ngAfterContentInit()  
-> + ngAfterContentChecked()   
-> + ngAfterViewInit() 
+> + ngOnInit()   --  初始化组件或指令
+> + ngDoCheck()   -- 自定义变更检测
+> + ngAfterContentInit()  -- 响应内容中的变更
+> + ngAfterContentChecked()   -- 响应被投影内容的变更
+> + ngAfterViewInit()   --  响应视图变更
 > + ngAfterViewChecked()  
 > + ngOnDestroy()
-### 使用变更检测钩子
+### 使用变更检测钩子--ngOnChanges()
 > Angular生命周期钩子: ngOnChanges(changes:SimpleChange): 
 > 在 ngOnInit() 之前以及所绑定的一个或多个输入属性的值发生变化时都会调用。 
 > 注意，如果你的组件没有输入，或者你使用它时没有提供任何输入，那么框架就不会调用 ngOnChanges()。 
 > changes参数包含当前传入值、上次传入值以及是否为第一次传入。 
+
+> 示例为：hero.component.html中引入app-hero-detail组件。
+### 初始化组件或指令 -- ngOnInit()
+> 在第一轮ngOnChanges()完成之后调用，只调用一次。
+> ngOnInit()是组件获取初始数据的好地方。
+### 自定义变更检测 -- ngDoCkeck()
+> 要检查ngOnChanges()无法捕获的变更，你可以实现直接的变更逻辑，比如ngDoCheck()例子。
+### 响应内容中的变更 -- ngAfterContentInit()
+>  第一次调用ngDoCheck()之后调用，只调用一次。  
 ## 生命周期范例
 > + Peek-a-boo  
 > + Spy   

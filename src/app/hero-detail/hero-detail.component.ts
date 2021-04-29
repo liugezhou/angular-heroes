@@ -13,12 +13,17 @@ import { HeroService } from "../hero.service";
 export class HeroDetailComponent implements OnInit {
   @Input() hero:Hero
   @Input() test:Hero
+  oldHeroName:string
+  changeDetected:boolean
+  noChangeCount:number
   constructor(
     private heroService:HeroService,
     private location:Location,
     private route:ActivatedRoute,
     ) { }
-  ngOnChanges(changes:SimpleChange){
+    ngOnChanges(changes:SimpleChange){
+    console.log('ngOnchanges()')
+    return
     for (const propName in changes) {
       console.log('propName:',propName)
       const chng = changes[propName];
@@ -28,11 +33,45 @@ export class HeroDetailComponent implements OnInit {
       const prev = JSON.stringify(chng.previousValue);
       console.log('prew',prev)
     }
-    console.log('ngOnchanges()')
   }
   ngOnInit(): void {
     console.log('ngOnInit()')
     // this.getHero()  //这个放开的条件是 a标签中的routerLink注注释放开
+  }
+  ngDoCheck(){
+    console.log('ngDoCheck()')
+    if (this.hero.name !== this.oldHeroName) {
+      this.changeDetected = true;
+      this.oldHeroName = this.hero.name;
+    }
+    if (this.changeDetected) {
+      this.noChangeCount = 0;
+    } else {
+        // log that hook was called when there was no relevant change.
+        const count = this.noChangeCount += 1;
+        if (count === 1) {
+          // add new "no change" message
+        } else {
+          // update last "no change" message
+        }
+    }
+
+    this.changeDetected = false;
+  }
+  ngAfterContentInit(){
+    console.log('ngAfterContentInit()')
+  }
+  ngAfterContentChecked(){
+    console.log('ngAfterContentChecked()')
+  }
+  ngAfterViewInit(){
+    console.log('ngAfterViewInit()')
+  }
+  ngAfterViewChecked(){
+    console.log('ngViewAfterChecked()')
+  }
+  ngOnDestory(){
+    console.log('ngOnDestory()')
   }
   getHero():void{
     const id = +this.route.snapshot.paramMap.get('id')
