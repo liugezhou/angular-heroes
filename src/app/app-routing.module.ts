@@ -4,6 +4,7 @@ import { HeroesComponent} from './heroes/heroes.component'
 import { DashboardComponent } from "./dashboard/dashboard.component";
 import { HeroDetailComponent } from "./hero-detail/hero-detail.component";
 import { ViewdataComponent } from "./viewdata/viewdata.component";
+import { AdComponent } from "./ad/ad.component";
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
@@ -11,6 +12,7 @@ const routes: Routes = [
   {path:'dashboard',component:DashboardComponent},
   {path:'detail/:id',component:HeroDetailComponent},
   {path:'viewdata',component:ViewdataComponent},
+  {path:'ad',component:AdComponent},
 ];
 
 @NgModule({  //@NgModule 元数据会初始化路由器，并开始监听浏览器地址的变化

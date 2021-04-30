@@ -13,6 +13,12 @@ import { InMemoryDataService } from "./in-memory-data.service";
 import { HeroSearchComponent } from './hero-search/hero-search.component';
 import { ViewdataComponent } from './viewdata/viewdata.component';
 import { SonComponentComponent } from './son-component/son-component.component';
+import { AdBannerComponent } from './ad-banner/ad-banner.component';
+import { HeroJobAdComponent } from './ad-banner/hero-job-ad.component';
+import { HeroProfileComponent } from './ad-banner/hero-profile.component';
+import { AdDirective } from './ad-banner/ad.directive';
+import { AdService } from './ad-banner/ad.service';
+import { AdComponent } from './ad/ad.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +28,12 @@ import { SonComponentComponent } from './son-component/son-component.component';
     DashboardComponent,
     HeroSearchComponent,
     ViewdataComponent,
-    SonComponentComponent
+    SonComponentComponent,
+    AdBannerComponent,
+    HeroJobAdComponent,
+    HeroProfileComponent,
+    AdDirective,
+    AdComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +44,8 @@ import { SonComponentComponent } from './son-component/son-component.component';
       InMemoryDataService, {dataEncapsulation: false}
     )
   ],
-  providers: [],
+  entryComponents: [ HeroJobAdComponent, HeroProfileComponent ],
+  providers: [AdService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

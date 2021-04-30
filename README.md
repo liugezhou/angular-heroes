@@ -116,3 +116,15 @@
 ### 父组件和子组件通过服务来通讯
 > 父子组件共享一个服务，利用该服务在组件家族内部实现双向通讯。  
 > 
+
+## 组件样式
+> 样式模块化：类名与选择器局限与该组件，不会与应用中其它地方冲突。  
+> :host(伪类选择器) 
+> :host-content 
+> 有几种方式把样式加入组件中：设置styles和styleUrls元数据，内敛在模版的HTML中，通过CSS文件导入。    
+> ng generate component hero-app --inline-style 
+
+## 动态组件
+> app/ad    
+> app/ad-banner
+
