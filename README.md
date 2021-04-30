@@ -1,3 +1,4 @@
+## 起步
 > 1.  ng new app-angular   
 > 2. ng serve --open
 > 3. 全局样式：src/style.css
@@ -9,7 +10,7 @@
 > 9. 双向绑定：ngModel是一个有效的Angular指令，在默认情况下是不可用的，它属于可选模块FormsModule，必须自行添加此模块才能使用该指令，在app.module.ts中从@angular/forms库中导入FormsModule符号。并添加到@NgModule元数据的imports数组中。
 > 10.  *ngFor是一个Augular的复写器(repeater)指令，它会为列表中的每项数据复写他的宿主元素。
 
-#### 20210427
+## 20210427
 > 1. 创建service：ng generate service hero
 > 新创建的hero.service.ts中：   
 > + @Injectable()服务：将这个类标记为依赖注入系统的参与者之一。
@@ -17,7 +18,7 @@
 > + HeroService.getHeros()将会返回Observable，部分原因在于他最终会使用Angular的HttpClient.get方法来获取英雄数据，而HttpClient.get()会返回Observable.    
 > + Observable是RxJS库中的一个关键类。
 
-#### 20210428
+## 20210428
 > 1. 添加AppRoutingModule(原cli新建已生成): ng generate module app-routing --flat --module=app  
 > + --flat:把这个文件放进了src/app中，而不是单独的目录中。  
 > + --module=app告诉cli把它注册到AppModule的imports数组中。 
@@ -27,15 +28,14 @@
 > + <router-outlet></router-outlet> 
 > + 标签跳转 <a routerLink="/heroes">Go</a>
 
-##### 从服务端获取数据
+### 从服务端获取数据
 > 借助Angular的HttpClient来添加一些数据持久化特性。HttpClient是Angular通过HTTP与远程服务器通讯的机制。   
 >  要让HttpClient在应用中随处可用，需要两个步骤：导入语句添加到AppModule中，imports注入。   
-##### 模拟数据服务器
+### 模拟数据服务器
 > npm install angular-in-memory-web-api --save
 
 
 ## 组件与模版
----
 > app/viewdata  
 > [可以用构造函数来代替这些属性的声明和初始化语句。]    
 > 这个示例：    
@@ -45,7 +45,6 @@
 > 用ngIf根据一个布尔表达式又条件的显示一段HTML。
 
 ## 模版语法
----
 > 在Angular中，模版就是一块HTML
 
 ## 用户输入
@@ -128,3 +127,24 @@
 > app/ad    
 > app/ad-banner
 
+## Angualr元素
+> @angualr/element包导出了一个createCustomElement() API，它在Angular组件接口与变更检测功能和内置DOM API之间建立了一个桥梁。
+
+## 属性型指令
+> 用于改变一个元素的外观或行为。    
+> 属性型指令至少需要一个带有@Directive装饰器的控制器类。    
+> 编写指令代码：ng generate directive highlight  
+
+## 结构型指令
+> *ngIf / *ngFor / *ngSwitch    
+> NgIf引用的是指令的类名，ngIf引用的是指令的属性名  
+> 从内部实现来说，Angular把*ngIf属性翻译成一个<ng-template>元素，并用它来包裹宿主主元素。   
+> ngSwitch实际上是一组相互合作的指令：NgSwitch、NgSwitchCase、NgSwitchDefault
+
+## 管道
+> DatePipe:根据本地环境中的规则格式化日期值。   
+> UpperCasePipe:把文本全部转换为大写。  
+> LowerCasePipe:把文本全部转换为小写。  
+> CurrencyPipe:把数字转换成货币字符串，根据本地环境中的规则进行格式化。 
+> DecimalPipe:把数字转换成带小数点的字符串，根据本地环境中的规则进行格式化。 
+> PercentPipe:把数字转换成百分比字符串，根据本地环境中的规则进行格式化。 
