@@ -164,3 +164,16 @@
 ## 表单验证
 ## 动态表单
 
+
+
+## 20210507
+### 内置指令
+> 最常见的内置属性指令：NgClass 、NgStyle、 NgModel   
+> + <div [ngClass] = "isSpecial ? 'sepical' : '' "></div> 
+> 最常见的内置结构指令：NgIf、NgFor、NgSwitch
+### ngNonBindable
+> 使用由模板引擎原生支持的 ngNonBindable 伪指令，可以让 Angular 不对模板中的表达式进行求值
+
+### 依赖注入
+> 创建可注入的服务类：ng generate service heroes/hero.  
+> @Injectable() 是每个 Angular 服务定义中的基本要素 

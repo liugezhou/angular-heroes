@@ -8,7 +8,7 @@ import { AdItem } from '../ad-banner/ad-item';
 })
 export class AdComponent implements OnInit {
   ads: AdItem[];
-
+  color:string = 'blue';
   constructor(private adService: AdService) {}
 
   ngOnInit() {
