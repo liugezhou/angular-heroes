@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable,of } from "rxjs";
 import { MessageService } from './message.service';
 import { Hero } from './hero'
-import { HEROS } from './mock-heroes'
+// import { HEROS } from './mock-heroes'
 import { HttpClient,HttpHeaders } from "@angular/common/http";
 import {catchError,map,tap } from "rxjs/operators";
 @Injectable({
@@ -45,7 +45,7 @@ export class HeroService {
   deleteHero(hero: Hero | number): Observable<Hero> {
     const id = typeof hero === 'number' ? hero : hero.id;
     const url = `${this.heroesUrl}/${id}`;
-  
+
     return this.http.delete<Hero>(url, this.httpOptions).pipe(
       tap(_ => this.log(`deleted hero id=${id}`)),
       catchError(this.handleError<Hero>('deleteHero'))
@@ -81,5 +81,5 @@ export class HeroService {
   //   return of(HEROS.find(hero=> hero.id === id))
   // }
 
- 
+
 }

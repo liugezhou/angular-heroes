@@ -20,6 +20,7 @@ import { AdDirective } from './ad-banner/ad.directive';
 import { AdService } from './ad-banner/ad.service';
 import { AdComponent } from './ad/ad.component';
 import { HighlightDirective } from './highlight.directive';
+import { SvgComponent } from './svg/svg.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +36,8 @@ import { HighlightDirective } from './highlight.directive';
     HeroProfileComponent,
     AdDirective,
     AdComponent,
-    HighlightDirective
+    HighlightDirective,
+    SvgComponent
   ],
   imports: [
     BrowserModule,
