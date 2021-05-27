@@ -152,20 +152,6 @@
 
 ---
 
-# 表单
-## 简介
-> 响应式表单和模板驱动表单  
-> + FormControl实例用于追踪单个表单控件的值和验证状态。 
-> + FormGroup用于追踪一个表单控件组的值和状态。 
-> + FormArray用于追踪表单控件数组的值和状态。   
-> + ControlValueAccessor 用于在 Angular 的 FormControl 实例和原生 DOM 元素之间创建一个桥梁.
-## 响应式表单
-## 模版驱动表单 
-## 表单验证
-## 动态表单
-
-
-
 ## 20210507
 ### 内置指令
 > 最常见的内置属性指令：NgClass 、NgStyle、 NgModel   
@@ -177,3 +163,43 @@
 ### 依赖注入
 > 创建可注入的服务类：ng generate service heroes/hero.  
 > @Injectable() 是每个 Angular 服务定义中的基本要素 
+### DI提供者
+
+### 路由守卫
+> + CanActivate
+> + CanActivateChild  
+> + CanDeactivate
+> + Resolve
+> + CanLoad
+> + 为守卫创建一项服务：ng generate guard your-guard
+
+
+### 路由核心
+>  路由导入：Angular的Router是一个可选服务，它为指定的URL提供特定的组件视图，它不是Angular核心的一部分，因此它位于自己的包@angualr/core 中。  
+>  import {RouterModule,Routes} from '@angular/core'   ---- app-routing.module.ts中，并在app.module.ts中引入。
+> 通过RouterModule.forRoot()方法配置路由器。  
+> 路由出口：<router-outlet></router-outlet>
+> a标签上  路由链接：routerLink，活动路由链路：routerLinkActive  
+> routerLinkActive指令会根据当前的RouterState切换活动到RouterLink绑定的CSS类：一个以空格分割的CSS类字符串。 
+> 路由器状态：ActivateRoute,可以从任何地方使用应用的Router服务和routerState属性来访问当前的RouterState。路由的路径和参数都可以通过注入名为ActivatedRoute的路由服务获得。  
+> 激活路由：包括 url / data / paramMap / queryParamMap / fragment / outlet / routeConfig / parent / firstChild / children 
+> 路由器事件：NavigationStart /  。。。。
+
+> 路由器术语：Router / RouterModule / Routes / Route / 
+
+
+## 表单简介
+>  响应式表单和模板驱动表单都建立在下列基础类之上：  
+> + FormControl实例用于追踪单个表单控件的值和验证状态。 
+> + FormGroup用于追踪一个表单控件组的值和状态。 
+> + FormArray用于追踪表单控件数组的值和状态。   
+> + ControlValueAccessor 用于在 Angular 的 FormControl 实例和原生 DOM 元素之间创建一个桥梁.
+## 响应式表单
+> 响应式表单是围绕Observable流构建的。  
+> 想使用响应式表单，要从@angualr/form包中导入ReactiveFormsModule,并把它添加到你的 NgModule 的 imports 数组中。  
+> 要注册一个表单控件，就要导入FromControl类并创建一个FormControl的新实例，将其保存为类的属性。  
+> 显示：{{ name.value}} 
+> 替换：this.name.setValue('liugezhou')
+## 模版驱动表单 
+## 表单验证
+## 动态表单

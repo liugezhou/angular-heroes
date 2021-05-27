@@ -21,6 +21,7 @@ import { AdService } from './ad-banner/ad.service';
 import { AdComponent } from './ad/ad.component';
 import { HighlightDirective } from './highlight.directive';
 import { SvgComponent } from './svg/svg.component';
+import { RouteComponent } from './route/route.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +38,8 @@ import { SvgComponent } from './svg/svg.component';
     AdDirective,
     AdComponent,
     HighlightDirective,
-    SvgComponent
+    SvgComponent,
+    RouteComponent
   ],
   imports: [
     BrowserModule,
